@@ -76,10 +76,13 @@ function onSelectCat(e){
         setTimeout(() => {
             loaderMessage.classList.add('is-hidden')
             markupCatInfo(data)
-            loaderMessage.classList.add('is-hidden')
-            Notiflix.Notify.failure(errorMessage.textContent)
         },0)       
-    });   
+    })
+    .catch(() => {
+        loaderMessage.classList.add('is-hidden')
+        Notiflix.Notify.failure(errorMessage.textContent)
+    })
+
 };
 
 
