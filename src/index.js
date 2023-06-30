@@ -13,9 +13,10 @@ const catInfo = document.querySelector('.cat-info');
 
 
 breedSelect.setAttribute('id', 'single')
-breedSelect.addEventListener('change', onSelectCat);
-loaderMessage.classList.add('is-hidden');
+loaderMessage.textContent = '';
+breedSelect.classList.add('is-hidden');
 errorMessage.classList.add('is-hidden');
+breedSelect.addEventListener('change', onSelectCat);
 
 Notiflix.Notify.init({
     position: 'center-top',
@@ -66,6 +67,7 @@ function markupCatInfo(arrCat){
 }
 
 function onSelectCat(e){
+    
     const idCat = e.currentTarget.value;
     loaderMessage.classList.remove('is-hidden');
     catInfo.classList.add('is-hidden');
