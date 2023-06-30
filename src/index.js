@@ -36,7 +36,7 @@ Notiflix.Notify.init({
 function markupSelectBreeds(beeds){
     breedSelect.classList.remove('is-hidden');
     loaderMessage.classList.add('is-hidden');
-    const markup = beeds.map((breed, i) => {
+    const markup = beeds.map((breed, idx) => {
         return `<option value="${breed.id}">${breed.name}</option>`
     }).join('');
     breedSelect.innerHTML = markup;
@@ -66,7 +66,7 @@ function markupCatInfo(arrCat){
 }
 
 function onSelectCat(e){
-    const idCat = e.carrentTarget.value;
+    const idCat = e.currentTarget.value;
     loaderMessage.classList.remove('is-hidden');
     catInfo.classList.add('is-hidden');
 
